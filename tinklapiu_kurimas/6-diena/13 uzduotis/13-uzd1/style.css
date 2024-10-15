@@ -1,0 +1,8 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 200px 300px 240px;
+    grid-template-rows: 400px;
+}
+body {
+    font-family: sans-serif;
+}
