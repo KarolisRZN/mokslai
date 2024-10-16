@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <title>CSS Layout Exercises | position property</title>
+    <meta charset="utf-8" />
+    <!-- reset -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css"
+    />
+  </head>
+  <style>
+    body {
+      position: relative;
+      height: 100vh;
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      background-color: #979090;
+    }
+
+    .logo {
+      width: 50px;
+      height: auto;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    .green-border {
+      position: absolute;
+      top: 450px;
+      left: 850px;
+      width: 800px;
+      height: 400px;
+      border: 3px dotted green;
+    }
+
+    .cat {
+      position: absolute;
+      top: 375px;
+      left: 950px;
+      width: 200px;
+      height: auto;
+    }
+    .image-scale-dog {
+      position: absolute;
+      bottom: 280px;
+      left: 1300px;
+      width: 200px;
+      height: auto;
+    }
+  </style>
+  <body>
+    <nav>
+      <img src="images/icon.png" alt="cat image" class="logo" />
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Display</a></li>
+        <li><a href="#">Float</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="green-border"></div>
+      <img src="images/spacecat.png" alt="space cat" class="cat" />
+      <img src="images/spacedog.png" alt="space dog" class="image-scale-dog" />
+    </main>
+  </body>
+</html>
