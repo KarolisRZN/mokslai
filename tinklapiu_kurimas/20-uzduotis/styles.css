@@ -1,0 +1,80 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  background-color: #5c2d91;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+header h1 {
+  margin: 0;
+  font-family: "Comic Sans Ms", sans-serif;
+}
+nav {
+  background-color: #5c2d91;
+  display: flex;
+  justify-content: center;
+}
+nav a {
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 18px;
+}
+nav a:hover {
+  background-color: #4b217a;
+}
+.hero {
+  background-image: url("images/dog_with_glasses.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 100px 0;
+  font-size: 48px;
+  font-weight: bold;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.hero h2 {
+  position: relative;
+  z-index: 1;
+}
+.content {
+  text-align: center;
+  padding: 50px;
+}
+.content h2 {
+  color: #5c2d91;
+}
+.pets {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.pet {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 20px;
+  text-align: center;
+  width: 200px;
+}
+.pet img {
+  width: 100%;
+  border-radius: 10px;
+}
+.pet h3 {
+  color: #5c2d91;
+}
