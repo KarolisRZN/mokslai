@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f3ee;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+h1, h2 {
+    margin: 0;
+}
+button {
+    background-color: #444;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+background-color: #666;
+}
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #e4e3de;
+    width: 200px;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar li {
+    margin: 10px 0;
+}
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+}
+header {
+    padding: 10px;
+    background-color: #e4e3de;
+    border-bottom: 1px solid #ccc;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+}
+.header-container h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+.menu-icon {
+    font-size: 2rem;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .header-container {
+        justify-content: space-between;
+    }
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.gallery article {
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 10px;
+}
+.pagination span {
+    background-color: #444;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.pagination span:hover {
+    background-color: #666;
+    transform: scale(1.1);
+}
+.pagination .active {
+    background-color: #e4e3de;
+    color: #444;
+    border: 1px solid #444;
+    font-weight: bold;
+    pointer-events: none;
+}
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #e4e3de;
+}
+.about button {
+    margin: 10px;
+}
+@media (max-width: 768px) {
+    .about {
+        padding: 10px;
+    }
+}
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #444;
+    color: white;
+}
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+    }
+}
