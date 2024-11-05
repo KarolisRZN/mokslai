@@ -1,0 +1,12 @@
+const pirma = +prompt("Kokius pažymius gavo Petriukas?");
+console.log(pirma);
+const antra = +prompt("Kokius pažymius gavo Petriukas?");
+console.log(antra);
+const trecia = +prompt("Kokius pažymius gavo Petriukas?");
+console.log(trecia);
+const ketvirta = +prompt("Kokius pažymius gavo Petriukas?");
+console.log(ketvirta);
+const penkta = +prompt("Kokius pažymius gavo Petriukas?");
+console.log(penkta);
+const suma = (pirma+antra+trecia+ketvirta+penkta)/5;
+console.log(suma);
