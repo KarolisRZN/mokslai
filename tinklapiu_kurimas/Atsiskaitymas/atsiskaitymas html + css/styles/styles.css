@@ -97,7 +97,7 @@ header {
 
 .testimonials {
     padding: 50px 20px;
-    background-color: #f8f8f8;
+    background-color: #007bff;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
@@ -134,7 +134,7 @@ font-size: 1.2em;
     background-size: cover;
     background-position: center;
     color: #fff;
-    text-align: center;
+    text-align: left;
 }
 
 .form-container {
