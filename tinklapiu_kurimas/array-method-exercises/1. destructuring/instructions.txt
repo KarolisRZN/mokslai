@@ -1,0 +1,6 @@
+In this exercise we will be getting comfortable with the basics of destructuring data in JavaScript..
+
+Destructuring in JavaScript is a syntax feature that allows you to unpack values from arrays or properties from objects into distinct variables. This simplifies the process of accessing and using data stored in arrays and objects. Instead of accessing properties or values through manual indexing or dot notation, destructuring enables a more concise and readable approach.
+
+Link to documentation: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+
