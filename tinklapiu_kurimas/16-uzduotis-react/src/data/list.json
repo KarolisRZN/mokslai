@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "HTML",
+    "content": "mokausi HTML",
+    "img": "https://www.niobehosting.com/blog/wp-content/uploads/html-hyper-text-transfer-protokol-nedir-ne-ise-yarar-800x400.jpeg",
+    "status": false
+  },
+  {
+    "id": 2,
+    "title": "CSS",
+    "content": "mokausi CSS",
+    "img": "https://css-weekly.com/wp-content/uploads/2022/11/the-evolution-of-scalable-css.jpg",
+    "status": false
+  },
+  {
+    "id": 3,
+    "title": "JavaScript",
+    "content": "mokausi JS",
+    "img": "https://ehuwt7zd2je.exactdn.com/wp-content/uploads/2023/11/Mastering-java-script.jpg",
+    "status": false
+  }
+]
