@@ -1,4 +1,3 @@
-import React from "react";
 import { useForm } from "react-hook-form";
 
 export default function Form() {
@@ -32,7 +31,7 @@ export default function Form() {
 
   return (
     <form className="col-4 mx-auto" onSubmit={handleSubmit(onSubmit)}>
-      {/* Name Field */}
+      {}
       <div className="mb-3">
         <label htmlFor="name" className="form-label">
           Name
@@ -52,7 +51,7 @@ export default function Form() {
         {errors.name && <p className="text-danger">{errors.name.message}</p>}
       </div>
 
-      {/* Type Field */}
+      {}
       <div className="mb-3">
         <label htmlFor="type" className="form-label">
           Type
@@ -76,7 +75,7 @@ export default function Form() {
         {errors.type && <p className="text-danger">{errors.type.message}</p>}
       </div>
 
-      {/* Breed Field */}
+      {}
       <div className="mb-3">
         <label htmlFor="breed" className="form-label">
           Breed
@@ -104,7 +103,7 @@ export default function Form() {
         {errors.breed && <p className="text-danger">{errors.breed.message}</p>}
       </div>
 
-      {/* Age Field */}
+      {}
       <div className="mb-3">
         <label htmlFor="age" className="form-label">
           Age
@@ -128,7 +127,7 @@ export default function Form() {
         {errors.age && <p className="text-danger">{errors.age.message}</p>}
       </div>
 
-      {/* Weight Field */}
+      {}
       <div className="mb-3">
         <label htmlFor="weight" className="form-label">
           Weight
@@ -145,10 +144,12 @@ export default function Form() {
             },
           })}
         />
-        {errors.weight && <p className="text-danger">{errors.weight.message}</p>}
+        {errors.weight && (
+          <p className="text-danger">{errors.weight.message}</p>
+        )}
       </div>
 
-      {/* Gender Field */}
+      {}
       <div className="mb-3">
         <label htmlFor="gender" className="form-label">
           Gender
@@ -161,7 +162,9 @@ export default function Form() {
             required: "Gender is required",
           })}
         />
-        {errors.gender && <p className="text-danger">{errors.gender.message}</p>}
+        {errors.gender && (
+          <p className="text-danger">{errors.gender.message}</p>
+        )}
       </div>
 
       <button type="submit" className="btn btn-primary">
