@@ -1,0 +1,79 @@
+.catalog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .book-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  .book-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .discount-badge {
+    background-color: yellow;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px;
+    position: relative;
+    top: -10px;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+  
+  .book-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .book-author {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .book-price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .current-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e63946;
+  }
+  
+  .old-price {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+  }
+  
+  .availability {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .in-stock {
+    color: green;
+  }
+  
+  .out-of-stock {
+    color: red;
+  }

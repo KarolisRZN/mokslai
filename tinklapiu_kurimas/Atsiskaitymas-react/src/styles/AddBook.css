@@ -1,0 +1,35 @@
+.add-book-form {
+    width: 400px;
+    margin: 0 auto;
+  }
+  
+  .add-book-form h2 {
+    text-align: center;
+  }
+  
+  .add-book-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .add-book-form label {
+    margin-top: 10px;
+  }
+  
+  .add-book-form input {
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .add-book-form button {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .add-book-form button:hover {
+    background-color: #218838;
+  }
