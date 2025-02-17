@@ -11,7 +11,7 @@ const AppointmentForm = ({ appointment, onSave, onClose }) => {
       ? new Date(appointment.date).toISOString().split("T")[0]
       : "",
     time: appointment?.time || "",
-    status: appointment?.status || "pending", // Ensure status is preserved
+    status: appointment?.status || "pending", // status
   });
 
   const handleChange = (e) => {

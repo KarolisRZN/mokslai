@@ -5,7 +5,7 @@ import Modal from "./Modal";
 import AppointmentForm from "./AppointmentForm";
 import AppointmentList from "./AppointmentList";
 import SortDropdown from "./SortDropdown";
-import Pagination from "./Pagination"; // Import the Pagination component
+import Pagination from "./Pagination";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -19,7 +19,7 @@ const Dashboard = () => {
   });
   const [user, setUser] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [appointmentsPerPage] = useState(10); // Number of appointments per page
+  const [appointmentsPerPage] = useState(10);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -109,7 +109,7 @@ const Dashboard = () => {
       }
     });
 
-  // Get current appointments
+  // get current appointments
   const indexOfLastAppointment = currentPage * appointmentsPerPage;
   const indexOfFirstAppointment = indexOfLastAppointment - appointmentsPerPage;
   const currentAppointments = filteredAndSortedAppointments.slice(
@@ -117,7 +117,7 @@ const Dashboard = () => {
     indexOfLastAppointment
   );
 
-  // Change page
+  // change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   const handleLogout = () => {

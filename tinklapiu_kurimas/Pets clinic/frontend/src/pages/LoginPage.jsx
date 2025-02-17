@@ -22,7 +22,7 @@ const LoginPage = ({ setUser }) => {
       localStorage.setItem("token", response.data.token);
       setMessage(response.data.message);
 
-      // Fetch user data after login
+      // fetch user data after login
       const userResponse = await axios.get(
         "http://localhost:5000/api/check-auth",
         {
@@ -31,7 +31,7 @@ const LoginPage = ({ setUser }) => {
       );
       setUser(userResponse.data.user);
 
-      navigate("/dashboard"); // Redirect to dashboard after successful login
+      navigate("/dashboard"); // redirect to dashboard
     } catch (err) {
       setMessage(err.response?.data?.error || "Login failed");
     }

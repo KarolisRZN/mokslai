@@ -11,10 +11,10 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-// Configure CORS to allow requests from your frontend's origin
+// cors
 app.use(
   cors({
-    origin: "http://localhost:5173", // Replace with your frontend's origin
+    origin: "http://localhost:5173",
     credentials: true,
   })
 );
@@ -22,7 +22,7 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 
-// Подключение к базе данных PostgreSQL
+// postgres
 const pool = new Pool({
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
@@ -31,7 +31,7 @@ const pool = new Pool({
   port: process.env.DB_PORT,
 });
 
-// Middleware для проверки токена
+// Middleware
 const verifyToken = (req, res, next) => {
   const token = req.headers["authorization"]?.split(" ")[1];
   console.log("Token:", token);
@@ -49,12 +49,12 @@ const verifyToken = (req, res, next) => {
   }
 };
 
-// Add this endpoint to your server.js file
+
 app.get("/api/check-auth", verifyToken, (req, res) => {
   res.json({ user: req.user });
 });
 
-// Регистрация нового пользователя
+// register user
 app.post("/api/register", async (req, res) => {
   console.log("POST /api/register");
   const { email, password, role } = req.body;
@@ -68,7 +68,7 @@ app.post("/api/register", async (req, res) => {
   }
 
   try {
-    // Проверка на наличие уже существующего пользователя
+    // check if user already exists
     const result = await pool.query("SELECT * FROM users WHERE email = $1", [
       email,
     ]);
@@ -78,11 +78,11 @@ app.post("/api/register", async (req, res) => {
       return res.status(400).json({ error: "User already exists" });
     }
 
-    // Хеширование пароля
+    // chash password
     const hashedPassword = await bcrypt.hash(password, 10);
     console.log("Hashed password:", hashedPassword);
 
-    // Запрос на добавление нового пользователя
+    // request to create a new user
     const newUser = await pool.query(
       "INSERT INTO users (email, password, role) VALUES ($1, $2, $3) RETURNING *",
       [email, hashedPassword, role]
@@ -98,13 +98,13 @@ app.post("/api/register", async (req, res) => {
   }
 });
 
-// Логин пользователя
+// login
 app.post("/api/login", async (req, res) => {
   console.log("POST /api/login");
   const { email, password } = req.body;
 
   try {
-    // Поиск пользователя по email
+    // search email in the database
     const result = await pool.query("SELECT * FROM users WHERE email = $1", [
       email,
     ]);
@@ -117,7 +117,7 @@ app.post("/api/login", async (req, res) => {
     console.log("Stored hashed password:", user.password);
     console.log("Entered password:", password);
 
-    // Проверка пароля
+    // check password 
     const validPassword = await bcrypt.compare(password, user.password);
     console.log("Password match:", validPassword);
 
@@ -125,7 +125,7 @@ app.post("/api/login", async (req, res) => {
       return res.status(401).json({ error: "Invalid password" });
     }
 
-    // Генерация JWT токена
+    // generate JWT token
     const payload = {
       userId: user.id,
       email: user.email,
@@ -142,7 +142,7 @@ app.post("/api/login", async (req, res) => {
   }
 });
 
-// Получение всех встреч
+// all appointments
 app.get("/api/appointments", verifyToken, async (req, res) => {
   console.log("GET /api/appointments");
   try {
@@ -162,7 +162,7 @@ app.get("/api/appointments", verifyToken, async (req, res) => {
   }
 });
 
-// Создание встречи
+// create appointment
 app.post("/api/appointments", verifyToken, async (req, res) => {
   console.log("POST /api/appointments");
   const { pet_name, pet_owner, description, date, time } = req.body;
@@ -183,7 +183,7 @@ app.post("/api/appointments", verifyToken, async (req, res) => {
   }
 });
 
-// Update the existing PUT endpoint in your server.js file
+// search id appointment
 app.put("/api/appointments/:id", verifyToken, async (req, res) => {
   console.log("PUT /api/appointments/:id");
   const { id } = req.params;
@@ -216,7 +216,7 @@ app.put("/api/appointments/:id", verifyToken, async (req, res) => {
   }
 });
 
-// Удаление встречи
+// delete appointment 
 app.delete("/api/appointments/:id", verifyToken, async (req, res) => {
   console.log("DELETE /api/appointments/:id");
   const { id } = req.params;

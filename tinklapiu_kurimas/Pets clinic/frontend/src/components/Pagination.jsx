@@ -1,4 +1,3 @@
-// filepath: /C:/Users/pakaifu/Desktop/Pets/frontend/src/components/Pagination.jsx
 import React from "react";
 
 const Pagination = ({ appointmentsPerPage, totalAppointments, paginate }) => {
